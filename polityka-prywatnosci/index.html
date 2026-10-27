@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Polityka prywatności Konfero BMS</title>
+<meta name="description" content="Polityka prywatności aplikacji Konfero BMS i panelu budynku.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+<style>
+	:root {
+		color-scheme: light dark;
+		--ink: #313131; --ink-2: #4B4B4B; --ink-3: #6B6B6B;
+		--ground: #F6F5F4; --surface: #FFFFFF; --line: #E4E2DF;
+		--accent: #0053A9; --accent-soft: #E3EDF8;
+		--sans: 'Archivo', -apple-system, system-ui, sans-serif;
+		--serif: 'IBM Plex Serif', Georgia, serif;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root { --ink: #ECEBE9; --ink-2: #CFCDCA; --ink-3: #9C9A96; --ground: #0F172A; --surface: #172033; --line: #26304A; --accent: #7FB2EC; --accent-soft: #16294A; }
+	}
+	* { box-sizing: border-box; }
+	html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+	body { margin: 0; background: var(--ground); color: var(--ink); font: 17px/1.7 var(--serif); }
+	a { color: var(--accent); text-underline-offset: 3px; }
+
+	header.site {
+		position: sticky; top: 0; z-index: 10; height: 80px; display: flex; align-items: center;
+		background: color-mix(in srgb, var(--surface) 82%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+		border-bottom: 1px solid var(--line);
+	}
+	.wrap { width: 100%; max-width: 920px; margin: 0 auto; padding: 0 16px; }
+	header.site .wrap { display: flex; align-items: center; gap: 14px; }
+	.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--ink); }
+		.mark { display: flex; align-items: center; gap: 10px; font: 600 22px/1 var(--sans); letter-spacing: .02em; }
+	.mark img { width: 32px; height: 32px; border-radius: 8px; }
+	.org { font: 15px/1.2 var(--sans); color: var(--ink-3); padding-left: 14px; border-left: 1px solid var(--line); }
+	@media (max-width: 520px) { .org { display: none; } }
+	.lang { margin-left: auto; display: flex; gap: 4px; font: 600 13px var(--sans); }
+	.lang a { padding: 6px 10px; border-radius: 999px; text-decoration: none; color: var(--ink-3); border: 1px solid var(--line); }
+	.lang a:hover { color: var(--accent); border-color: var(--accent); }
+
+	.hero { padding: 48px 0 28px; }
+	.eyebrow { font: 600 13px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+	h1 { font: 600 clamp(30px, 5vw, 42px)/1.15 var(--sans); margin: 0 0 12px; letter-spacing: -.01em; }
+	.lead { font-size: 19px; color: var(--ink-2); margin: 0; max-width: 680px; }
+	.meta { font: 14px var(--sans); color: var(--ink-3); margin: 16px 0 0; }
+
+	.layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; align-items: start; }
+	nav.toc { position: sticky; top: 104px; font: 14px/1.5 var(--sans); }
+	nav.toc p { font-weight: 600; margin: 0 0 8px; color: var(--ink-3); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+	nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+	nav.toc a { text-decoration: none; color: var(--ink-2); }
+	nav.toc a:hover { color: var(--accent); }
+	@media (max-width: 760px) { .layout { grid-template-columns: 1fr; } nav.toc { position: static; } }
+
+	section.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 6px 26px 20px; margin: 0 0 18px; }
+	h2 { font: 600 22px/1.3 var(--sans); margin: 22px 0 8px; }
+	.num { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-right: 10px; border-radius: 50%;
+		background: var(--accent-soft); color: var(--accent); font: 600 14px var(--sans); vertical-align: 3px; }
+	.table { overflow-x: auto; }
+	table { border-collapse: collapse; width: 100%; font: 15px/1.5 var(--sans); }
+	th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-top: 1px solid var(--line); }
+	th { color: var(--ink-3); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; border-top: 0; }
+	.callout { background: var(--accent-soft); border-radius: 12px; padding: 12px 16px; margin: 14px 0 4px; }
+	ul { padding-left: 20px; }
+
+	.divider { display: flex; align-items: center; gap: 14px; margin: 44px 0 0; font: 600 13px var(--sans); color: var(--ink-3); letter-spacing: .12em; text-transform: uppercase; }
+	.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+	footer.site { margin-top: 48px; padding: 28px 0 calc(28px + env(safe-area-inset-bottom)); border-top: 1px solid var(--line); background: var(--surface); font: 14px/1.6 var(--sans); color: var(--ink-3); }
+	footer.site .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+	footer.site strong { color: var(--ink); }
+</style>
+</head>
+<body>
+<header class="site">
+	<div class="wrap">
+		<a class="brand" href="/">
+			<span class="mark"><img src="/favicon.svg" alt="">Konfero BMS</span>
+			<span class="org">Panel budynku</span>
+		</a>
+		<nav class="lang" aria-label="Język"><a href="#pl" lang="pl">PL</a><a href="#en" lang="en">EN</a></nav>
+	</div>
+</header>
+
+<main class="wrap">
+	<div class="hero" id="pl">
+		<p class="eyebrow">Aplikacja Konfero BMS</p>
+		<h1>Polityka prywatności</h1>
+		<p class="lead">Jak aplikacja Konfero BMS na iPhone’a i iPada oraz panel budynku przetwarzają dane osób, które z nich korzystają.</p>
+		<p class="meta">Obowiązuje od 27 października 2026</p>
+	</div>
+
+	<div class="layout">
+		<nav class="toc" aria-label="Spis treści">
+			<p>Spis treści</p>
+			<ol>
+				<li><a href="#pl-kto">Kto przetwarza dane</a></li>
+				<li><a href="#pl-dane">Jakie dane i po co</a></li>
+				<li><a href="#pl-komu">Komu dane są przekazywane</a></li>
+				<li><a href="#pl-prawa">Twoje prawa</a></li>
+			</ol>
+		</nav>
+		<div>
+			<section class="card" id="pl-kto">
+				<h2><span class="num">1</span>Kto przetwarza dane</h2>
+				<p>Administratorem danych przetwarzanych przez aplikację Konfero BMS i panel budynku jest
+				<strong>Kościół Aktywnych Chrześcijan w RP</strong>. W sprawach danych osobowych pisz na
+				<a href="mailto:sebastian@koach.pl">sebastian@koach.pl</a>.</p>
+				<p>Aplikacja służy osobom obsługującym obiekt KOACH: ogrzewaniu, wentylacji, oświetleniu, alarmowi, domofonowi
+				i powiadomieniom. Konta zakłada administrator obiektu; w aplikacji nie można założyć konta.</p>
+			</section>
+
+			<section class="card" id="pl-dane">
+				<h2><span class="num">2</span>Jakie dane i po co</h2>
+				<div class="table">
+					<table>
+						<tr><th>Dane</th><th>Cel</th><th>Jak długo</th></tr>
+						<tr><td>Imię i nazwisko, login, adres e-mail (z konta Microsoft przy logowaniu przez Entra ID)</td><td>Logowanie i uprawnienia</td><td>Do usunięcia konta</td></tr>
+						<tr><td>Dziennik zdarzeń: kto, kiedy i co zrobił w panelu, np. otwarcie bramy lub rozbrojenie strefy, wraz z adresem IP</td><td>Bezpieczeństwo obiektu i rozliczalność działań</td><td>400 dni</td></tr>
+						<tr><td>Identyfikator telefonu nadany przez iOS, nazwa urządzenia, tokeny powiadomień Apple, wybrane kategorie powiadomień i zgoda na połączenia z domofonu</td><td>Powiadomienia i połączenia z domofonu na ten telefon</td><td>Do wylogowania, wyłączenia powiadomień lub usunięcia konta</td></tr>
+						<tr><td>Numer telefonu i czat Telegram, jeśli zostaną podane w ustawieniach powiadomień</td><td>Powiadomienia o awariach i alarmach: Telegram, krytyczne przez SMS</td><td>Do usunięcia z ustawień lub usunięcia konta</td></tr>
+						<tr><td>Zdjęcia z kamery domofonu przy dzwonku</td><td>Historia połączeń przy bramie</td><td>90 dni</td></tr>
+					</table>
+				</div>
+				<p class="callout">Zapamiętany kod alarmu zostaje <strong>wyłącznie na telefonie</strong>, w pęku kluczy iOS, i można go odczytać
+				tylko po potwierdzeniu Face ID lub Touch ID. Na serwer trafia jedynie w chwili wysłania polecenia do centrali.</p>
+				<p>Aplikacja nie śledzi użytkowników, nie wyświetla reklam, nie sprzedaje danych i nie używa narzędzi analitycznych.</p>
+			</section>
+
+			<section class="card" id="pl-komu">
+				<h2><span class="num">3</span>Komu dane są przekazywane</h2>
+				<ul>
+					<li><strong>Apple</strong> dostarcza powiadomienia i połączenia na telefon (APNs) i otrzymuje token urządzenia oraz treść powiadomienia.</li>
+					<li><strong>Cloudflare</strong> chroni dostęp do panelu spoza budynku (Cloudflare Access).</li>
+					<li><strong>Microsoft</strong> obsługuje logowanie kontem firmowym (Entra ID), jeśli wybierzesz tę metodę.</li>
+					<li><strong>Telegram</strong> dostarcza powiadomienia na czat, jeśli go podasz. <strong>Operator SMS</strong> otrzymuje numer telefonu i treść krytycznego powiadomienia.</li>
+				</ul>
+				<p>Panel i dane działają na serwerze w obiekcie KOACH. Dane nie są przekazywane innym podmiotom.</p>
+			</section>
+
+			<section class="card" id="pl-prawa">
+				<h2><span class="num">4</span>Twoje prawa</h2>
+				<p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania i sprzeciwu, a także
+				prawo skargi do Prezesa Urzędu Ochrony Danych Osobowych. Podstawą przetwarzania jest prawnie uzasadniony interes
+				administratora: bezpieczeństwo i obsługa budynku (art. 6 ust. 1 lit. f RODO).</p>
+				<p>Aby usunąć konto lub dane, napisz na <a href="mailto:sebastian@koach.pl">sebastian@koach.pl</a>. Powiadomienia
+				i połączenia wyłączysz w aplikacji (Moje konto → Powiadomienia na tym telefonie) albo w Ustawieniach iOS.
+				Wylogowanie usuwa telefon z listy odbiorców.</p>
+			</section>
+		</div>
+	</div>
+
+	<p class="divider" id="en" lang="en">English</p>
+	<div lang="en">
+		<div class="hero">
+			<p class="eyebrow">Konfero BMS app</p>
+			<h1>Privacy policy</h1>
+			<p class="lead">How the Konfero BMS app for iPhone and iPad and the building panel process the data of the people who use them.</p>
+			<p class="meta">Effective 27 October 2026</p>
+		</div>
+
+		<div class="layout">
+			<nav class="toc" aria-label="Contents">
+				<p>Contents</p>
+				<ol>
+					<li><a href="#en-who">Who processes the data</a></li>
+					<li><a href="#en-data">What data and why</a></li>
+					<li><a href="#en-recipients">Who receives data</a></li>
+					<li><a href="#en-rights">Your rights</a></li>
+				</ol>
+			</nav>
+			<div>
+				<section class="card" id="en-who">
+					<h2><span class="num">1</span>Who processes the data</h2>
+					<p>The controller of the data processed by the Konfero BMS app and the building panel is
+					<strong>Kościół Aktywnych Chrześcijan w RP</strong>. Contact: <a href="mailto:sebastian@koach.pl">sebastian@koach.pl</a>.</p>
+					<p>The app lets the people who run the KOACH venue control the building: heating, ventilation, lighting, the alarm,
+					the intercom and notifications. Accounts are created by the venue’s administrator; the app has no sign-up.</p>
+				</section>
+
+				<section class="card" id="en-data">
+					<h2><span class="num">2</span>What data and why</h2>
+					<div class="table">
+						<table>
+							<tr><th>Data</th><th>Purpose</th><th>Kept for</th></tr>
+							<tr><td>Name, username, e-mail (from the Microsoft account when signing in with Entra ID)</td><td>Sign-in and permissions</td><td>Until the account is deleted</td></tr>
+							<tr><td>Audit log: who did what and when in the panel, e.g. opened the gate or disarmed a zone, with the IP address</td><td>Building security and accountability</td><td>400 days</td></tr>
+							<tr><td>Phone identifier assigned by iOS, device name, Apple push tokens, chosen notification categories and intercom opt-in</td><td>Notifications and intercom calls to this phone</td><td>Until logout, turning notifications off, or account deletion</td></tr>
+							<tr><td>Phone number and Telegram chat, if entered in the notification settings</td><td>Fault and alarm notifications: Telegram, critical ones by SMS</td><td>Until removed from the settings or the account is deleted</td></tr>
+								<tr><td>Intercom camera stills taken when someone rings</td><td>Gate call history</td><td>90 days</td></tr>
+						</table>
+					</div>
+					<p class="callout">A remembered alarm code stays <strong>on the phone only</strong>, in the iOS Keychain, readable only after
+					Face ID or Touch ID. It reaches the server only for the moment a command is sent to the alarm panel.</p>
+					<p>The app does not track users, show ads, sell data or use analytics.</p>
+				</section>
+
+				<section class="card" id="en-recipients">
+					<h2><span class="num">3</span>Who receives data</h2>
+					<ul>
+						<li><strong>Apple</strong> delivers notifications and calls (APNs) and receives the device token and the notification text.</li>
+						<li><strong>Cloudflare</strong> protects access to the panel from outside the building (Cloudflare Access).</li>
+						<li><strong>Microsoft</strong> handles company sign-in (Entra ID), if you choose it.</li>
+						<li><strong>Telegram</strong> delivers notifications to the chat, if you add one. The <strong>SMS operator</strong> receives the phone number and the text of a critical notification.</li>
+					</ul>
+					<p>The panel and its data run on a server at the KOACH venue. No other parties receive the data.</p>
+				</section>
+
+				<section class="card" id="en-rights">
+					<h2><span class="num">4</span>Your rights</h2>
+					<p>You may access, correct or delete your data, restrict or object to its processing, and complain to the Polish data
+					protection authority (UODO). The legal basis is the controller’s legitimate interest in running and securing the
+					building (Art. 6(1)(f) GDPR).</p>
+					<p>To delete your account or data, write to <a href="mailto:sebastian@koach.pl">sebastian@koach.pl</a>. Turn
+					notifications and calls off in the app (Moje konto → Powiadomienia na tym telefonie) or in iOS Settings. Logging out
+					removes the phone from the recipients.</p>
+				</section>
+			</div>
+		</div>
+	</div>
+</main>
+
+<footer class="site">
+	<div class="wrap">
+		<span><strong>Konfero BMS</strong> · administrator danych: Kościół Aktywnych Chrześcijan w RP</span>
+		<span><a href="mailto:sebastian@koach.pl">sebastian@koach.pl</a> · <a href="/">bms.konfero.pl</a></span>
+	</div>
+</footer>
+</body>
+</html>
